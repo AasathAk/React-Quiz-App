@@ -1,0 +1,393 @@
+.welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #2c2c2c; /* Dark background */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.quiz-title {
+    font-size: 2.5rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, rgba(0,147,233,1) 0%, rgba(214,67,212,1) 50%, rgba(255,169,69,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+}
+
+.quiz-questions {
+    font-size: 1.2rem;
+    color: #9fa6ad;
+    margin-bottom: 30px;
+}
+
+.start-btn {
+    font-size: 1.1rem;
+    color: #fff;
+    background: linear-gradient(90deg, #5B86E5 0%, #36D1DC 100%);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.start-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.start-btn:active {
+    transform: translateY(-2px);
+}
+
+
+/* Quiz main css */
+.quiz {
+    background-color: #1e1e1e; /* Dark background to match modern design */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    margin: 20px auto;
+    
+}
+
+.progress-container {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+progress {
+    width: 100%;
+    height: 15px;
+    border-radius: 7px;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #444;
+    border-radius: 7px;
+}
+
+progress::-webkit-progress-value {
+    background-color: #ff6868;
+    border-radius: 7px;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+}
+
+.question-info {
+    font-size: 1rem;
+    color: #ff6868;
+    font-weight: bold;
+}
+
+.points-info {
+    font-size: 1rem;
+    color: #9be3ac; /* Light green for points */
+    font-weight: bold;
+}
+
+.timer-info {
+    font-size: 1rem;
+    color: #f9a825; /* Orange for timer */
+    font-weight: bold;
+    background-color: rgba(249, 168, 37, 0.2); /* Light background for timer */
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #f9a825;
+}
+
+/* Question style*/
+.question-container {
+    background: linear-gradient(180deg, #fbc2eb 0%, #a6c1ee 100%);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    width: 80%;
+}
+
+.question {
+    font-size: 1.5rem;
+    color: #1e1e1e;
+    margin-bottom: 25px;
+}
+
+.option-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the options horizontally */
+    justify-content: center;
+    gap: 10px; /* Add space between options */
+  }
+  
+  .option {
+    padding: 15px 25px;
+    margin: 10px 0;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth background and scale transition */
+    font-size: 16px;
+    width: 100%; /* Make options take up the full width */
+    max-width: 500px; /* Set a max width for responsiveness */
+    text-align: center; /* Center the text */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  }
+  
+  .option:hover {
+    background-color: #e0e0e0; /* Slight hover effect */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+  }
+  
+  .option.correct {
+    background-color: #8bc34a; /* Green for correct */
+    color: white;
+  }
+  
+  .option.wrong {
+    background-color: #f44336; /* Red for wrong */
+    color: white;
+  }
+  
+  .option:disabled {
+    cursor: not-allowed;
+    opacity: 0.6; /* Fade out disabled option */
+  }
+  
+  .next {
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+  }
+  
+  .next:hover {
+    background-color: #45a049; /* Slightly darker on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+  }
+  
+  /* Animation for options appearing */
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px); /* Slide from bottom */
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .option {
+    animation: slideIn 0.5s ease-in-out; /* Apply the slide-in animation */
+  }
+  
+
+/* Next Button*/
+.navigation-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Spacing between buttons */
+    margin-top: 20px;
+}
+
+.next, .finish {
+    background-color: #4caf50; /* Green background */
+    color: #fff; /* White text */
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.next:hover, .finish:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.next:active, .finish:active {
+    background-color: #388e3c; /* Even darker green on click */
+    transform: translateY(0); /* Reset after click */
+}
+
+.finish {
+    background-color: #f44336; /* Red background for 'Finish' button */
+}
+
+.finish:hover {
+    background-color: #e53935; /* Darker red on hover */
+}
+
+.finish:active {
+    background-color: #d32f2f; /* Even darker red on click */
+}
+
+
+/* Container for the end of the quiz */
+.completion {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    margin: 40px auto;
+    width: 90%;
+    max-width: 600px;
+}
+
+/* Heading (Thank You) */
+.completion h2 {
+    font-size: 2rem;
+    color: #4caf50;
+    margin-bottom: 10px;
+}
+
+/* Emoji styling */
+.emoji {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* Result styling */
+.result {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #f1c40f; /* Yellow color for the result */
+}
+
+/* Highscore styling */
+.highscore {
+    font-size: 1.1rem;
+    color: #c0392b; /* Red color for the high score */
+    margin-bottom: 20px;
+}
+
+/* Restart button styling */
+.restart {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover and active effects for the Restart button */
+.restart:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+.restart:active {
+    background-color: #388e3c;
+    transform: translateY(0);
+}
+
+.completion {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .emoji {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  .result, .highscore {
+    font-size: 1.2em;
+    margin: 10px 0;
+  }
+  
+  .restart {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .restart:hover {
+    background-color: #45a049;
+  }
+  
+
+/* Loader Container */
+.loader-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full viewport height */
+    background-color: #2c2c2c; /* Dark background */
+    color: #ffffff; /* White text color */
+}
+
+/* Loader Spinner */
+.loader {
+    border: 8px solid #f3f3f3; /* Light gray border */
+    border-top: 8px solid #3498db; /* Blue top border */
+    border-radius: 50%;
+    width: 50px; /* Size of the spinner */
+    height: 50px; /* Size of the spinner */
+    animation: spin 1s linear infinite; /* Animation for spinning */
+    margin-bottom: 10px; /* Space between spinner and text */
+}
+
+/* Spinner Animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Loading Text */
+.loader-container p {
+    font-size: 18px; /* Font size for the loading text */
+    text-align: center; /* Center the text */
+    margin-top: 10px; /* Space above the text */
+}
+
+
+/* Error Message Style */
+.error {
+    color: #d9534f; /* Bootstrap danger color (red) */
+    background-color: #f2dede; /* Light red background */
+    border: 1px solid #ebccd1; /* Border color to match background */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px; /* Spacing inside the box */
+    text-align: center; /* Center the text */
+    font-size: 18px; /* Font size */
+    margin: 20px; /* Margin around the error message */
+}
+
+/* Optional: Icon Style */
+.error span {
+    font-size: 24px; /* Icon size */
+    margin-right: 10px; /* Space between icon and text */
+}

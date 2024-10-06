@@ -1,0 +1,64 @@
+{
+    "quizQuestion": [
+        {
+            "question": "What is the default behavior of React when rendering a list?",
+            "options": ["Keys", "Refs", "State", "Props"],
+            "correctAnswer": 0,
+            "points": 5
+        },
+        {
+            "question": "Which method is used to create components in React?",
+            "options": ["createComponent", "renderComponent", "useComponent", "createElement"],
+            "correctAnswer": 3,
+            "points": 5
+        },
+        {
+            "question": "In JavaScript, which symbol is used to assign a value to a variable?",
+            "options": ["=", "==", "===", "=>"],
+            "correctAnswer": 0,
+            "points": 5
+        },
+        {
+            "question": "Which HTML element is used to define an internal style sheet?",
+            "options": ["<style>", "<script>", "<link>", "<stylesheet>"],
+            "correctAnswer": 0,
+            "points": 5
+        },
+        {
+            "question": "Which CSS property controls the text size?",
+            "options": ["font-style", "text-size", "font-size", "text-style"],
+            "correctAnswer": 2,
+            "points": 5
+        },
+        {
+            "question": "Which HTTP method is used to request data from a specified resource?",
+            "options": ["GET", "POST", "PUT", "DELETE"],
+            "correctAnswer": 0,
+            "points": 5
+        },
+        {
+            "question": "Which JavaScript function is used to parse a string to an integer?",
+            "options": ["parseFloat", "parseInt", "toFixed", "Number"],
+            "correctAnswer": 1,
+            "points": 5
+        },
+        {
+            "question": "What does SQL stand for?",
+            "options": ["Structured Query Language", "Simple Query Language", "Sequential Query Language", "Standard Query Language"],
+            "correctAnswer": 0,
+            "points": 5
+        },
+        {
+            "question": "Which tag is used to create a hyperlink in HTML?",
+            "options": ["<a>", "<link>", "<href>", "<url>"],
+            "correctAnswer": 0,
+            "points": 5
+        },
+        {
+            "question": "Which tool can you use to ensure code quality in JavaScript?",
+            "options": ["Angular", "jQuery", "ESLint", "Node.js"],
+            "correctAnswer": 2,
+            "points": 5
+        }
+    ]
+}
